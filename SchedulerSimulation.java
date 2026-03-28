@@ -30,6 +30,8 @@ class Process implements Runnable {
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
     private int priority; // 1 Feature - Add priority to each process
+    private long totalWaitingTime;
+    private long lastQueueEnterTime;  // 3 Feature - Track waiting time
     // Constructor to initialize the process with name, burst time, and time quantum
    public Process(String name, int burstTime, int timeQuantum, int priority) {
         this.name = name;
@@ -37,11 +39,15 @@ class Process implements Runnable {
         this.timeQuantum = timeQuantum;
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
         this.priority = priority; // 1 Feature
+        this.totalWaitingTime = 0;
+        this.lastQueueEnterTime = System.currentTimeMillis(); //Feature3
     }
 
     // This method will be called when the thread for this process is started
     @Override
     public void run() {
+        long startTime = System.currentTimeMillis();
+        totalWaitingTime += (startTime - lastQueueEnterTime); //Feature3
         // Simulate running for either the time quantum or remaining time, whichever is smaller
         int runTime = Math.min(timeQuantum, remainingTime); // Run for the smaller of the two times
         
@@ -144,6 +150,9 @@ class Process implements Runnable {
     // Check if the process has finished (i.e., no remaining time)
     public boolean isFinished() {
         return remainingTime <= 0;
+    }
+    public long getWaitingTime() {
+         return totalWaitingTime;   //Feature3
     }
 }
 
@@ -284,6 +293,11 @@ public class SchedulerSimulation {
                           "╚════════════════════════════════════════════════════════════════════════════════╝" + 
                           Colors.RESET + "\n");
                           System.out.println("Total Context Switches: " + contextSwitches); //Feature2
+
+            System.out.println("\nProcess\tBurst Time\tWaiting Time");
+               for (Process p : processMap.values()) {
+               System.out.println(p.getName() + "\t" + p.getBurstTime() + "\t\t" + p.getWaitingTime());  //Feature3
+        }              
     }
     
     // Method to add a process to the queue and map, while printing a "ready" message
@@ -292,7 +306,7 @@ public class SchedulerSimulation {
         // Create a new thread to run the process
         Thread thread = new Thread(process);
         
-        // Add the thread to the ready queue
+        // Add the thread to the ready queu
         processQueue.add(thread);
         
         // Map the thread to the process, so we can track the process associated with each thread
