@@ -13,61 +13,83 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Example Entry Format:
 
-### Entry 1 - [April 1, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
+### Entry 1 -  March 27, 2026, 5:00 PM
+**What I did**: Started the assignment by reading and understanding the requirements and overall task.
 
-**Details**: 
-- Created GitHub account with university email
-- Forked the starter repository
-- Changed student ID on line 92 to my actual ID (441234567)
-- Compiled and ran the program successfully
+**Details**:
+- Carefully read the assignment instructions and understood all required parts
+- Researched the tools and programs that I would need to complete the assignment
+- Began working quickly due to limited time and focused on making progress
+- Put in significant effort to understand how everything works together
 
-**Challenges**: Had to install JDK first because javac wasn't recognized
+**Challenges**:
+Time was limited, which made it difficult to fully focus at the beginning
 
-**Solution**: Downloaded JDK 17 from Oracle website and set PATH variable
+**Solution**:
+I managed my time by starting immediately, staying focused, and working efficiently step by step
 
-**Time spent**: 30 minutes
+**Time spent**: 2 hours
+---
+
+
+
+### Entry 2 -  March 28, 2026, 7:00 AM
+**What I did**:Started the assignment by set up github and understood the code.
+
+**Details**:
+-i modified what was required of me in GitHub
+- Ran the program
+- Reviewed how processes are scheduled
+
+**Challenges**:
+Understanding the code structure
+
+**Solution**:
+Read the code line by line
+
+
+**Time spent**: 4 hours 
+
+
 
 ---
 
-## Your Development Log:
+### Entry 3 -  March 29, 2026, 1:00 AM
+**What I did**:Worked on implementing features
 
-### Entry 1 - [Date and Time]
-**What I did**: 
+**Details**:
+- Added priority
+- Added context switch counter
 
-**Details**: 
+**Challenges**:
+Where to place new code
 
-**Challenges**: 
+**Solution**:
+Tested multiple times
 
-**Solution**: 
+**Time spent**: 4 hours
+ 
 
-**Time spent**: 
 
----
-
-### Entry 2 - [Date and Time]
-**What I did**: 
-
-**Details**: 
-
-**Challenges**: 
-
-**Solution**: 
-
-**Time spent**: 
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**: 
+### Entry 4 -March 29, 2026, 9:00 PM
+**What I did**:Finished waiting time and answered questions
 
-**Details**: 
+**Details**:
+- Calculated waiting time
+- Completed answers and reflection
 
-**Challenges**: 
+**Challenges**:
+Correct calculation of waiting time
 
-**Solution**: 
+**Solution**:
+Placed calculation inside run()
 
-**Time spent**: 
+**Time spent**: 4 hours 
+
+
 
 ---
 
@@ -112,10 +134,10 @@ Document your development process as you work on the assignment. Add entries sho
 
 ## Summary
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: 14 hours  
 
-**Most challenging part**: 
+**Most challenging part**: Waiting time calculation  
 
-**Most interesting learning**: 
+**Most interesting learning**: Round Robin scheduling  
 
-**What I would do differently next time**: 
+**What I would do differently next time**: Start earlier
